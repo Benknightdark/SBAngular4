@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div *ngFor="let child of childlist">
     <li>
         <a href="javascript:void(0)"><span>{{ child?.Entity?.Text }}</span></a>
@@ -11,3 +12,15 @@
     </li>
 </div>
 
+=======
+<li *ngFor="let child of childlist">
+    <a href="javascript:void(0)"><span>{{ child.Entity.Text }}</span></a>
+    <div *ngIf="child.ChildNodes.length!=0">
+    <ul class="submenu">
+     <li class="nested" [class.expand]="showMenu === 'pages'">
+     <app-treenode [childlist]="child.ChildNodes"></app-treenode>
+     </li>
+     </ul>
+     </div>
+</li>
+>>>>>>> 97180d92a427f38f67aaaff29525ac737774c2c3
