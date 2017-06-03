@@ -1,7 +1,8 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit,ViewChild } from '@angular/core';
 import { Http } from "@angular/http";
 import { Observable } from 'rxjs'
 import 'rxjs'
+import { TreenodeComponent } from "app/shared";
 @Component({
     selector: 'app-sidebar',
     templateUrl: './sidebar.component.html',
@@ -12,7 +13,8 @@ export class SidebarComponent {
     isActive = false;
     showMenu = '';
     menudata:Observable<any>;
-    dashboard:string='dashboard'
+
+  block1: TreenodeComponent;
     ngOnInit() {
         //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
         //Add 'implements OnInit' to the class.
@@ -20,6 +22,7 @@ export class SidebarComponent {
             .map(res => res.json()[0])
            // .subscribe(r => { this.menudata = r })
     }
+
     eventCalled() {
         this.isActive = !this.isActive;
     }

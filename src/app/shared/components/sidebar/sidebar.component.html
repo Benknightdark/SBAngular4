@@ -1,4 +1,5 @@
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
+
     <ul class="list-group">
 
 
@@ -6,15 +7,12 @@
             <a class="list-group-item" (click)="addExpandClass('pages')" routerLink="/dashboard" [routerLinkActive]="['router-link-active']">
                     <i class="fa " [class.fa-cogs]="true">  </i>&nbsp;{{item.Entity.Text}}
                     <div *ngIf="item.ChildNodes.length!=0">
-
                          <li class="nested" [class.expand]="showMenu === 'pages'">
                             <ul class="submenu">
-                                <app-treenode [childlist]="item.ChildNodes"></app-treenode>
+                            <app-treenode  [childlist]="child.ChildNodes" ></app-treenode>
                             </ul>
                 </li>
-
                 </div>
-
                 </a>
         </div>
 

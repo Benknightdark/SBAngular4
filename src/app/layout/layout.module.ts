@@ -7,6 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { HeaderComponent, SidebarComponent } from '../shared';
+import { TestlistComponent } from './testlist/testlist.component';
 @NgModule({
     imports: [
         CommonModule,
@@ -18,7 +19,8 @@ import { HeaderComponent, SidebarComponent } from '../shared';
         LayoutComponent,
         HeaderComponent,
         SidebarComponent,
-        TreenodeComponent
+        TreenodeComponent,
+        TestlistComponent
     ]
 })
 export class LayoutModule { }

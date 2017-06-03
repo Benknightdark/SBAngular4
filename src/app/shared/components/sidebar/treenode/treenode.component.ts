@@ -1,17 +1,19 @@
 import { Component, OnInit,Input } from '@angular/core';
-
+import { Observable } from 'rxjs'
+import 'rxjs'
 @Component({
   selector: 'app-treenode',
   templateUrl: './treenode.component.html',
-  styleUrls: ['../sidebar.component.scss']
+  styleUrls: ['./treenode.component.scss']
 })
-export class TreenodeComponent implements OnInit {
+export class TreenodeComponent  {
 
   constructor() { }
-    @Input() childlist:any;
-
+    @Input() childlist:Observable<any>;
+   //childlist:Observable<any>
   ngOnInit() {
-      console.log(this.childlist);
+
+
   }
 
 
