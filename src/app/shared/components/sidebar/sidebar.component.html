@@ -1,7 +1,13 @@
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
     <ul class="list-group">
+
+        <div *ngFor="let item of menudata | async ">
+            <a  class="list-group-item">
+                <i class="fa fa-fw fa-dashboard"></i> &nbsp;{{ dashboard | translate }}
+            </a>
+        </div>
         <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-dashboard"></i>&nbsp;{{ 'dashboard' | translate }}
+            <i class="fa fa-fw fa-dashboard"></i> &nbsp;{{ dashboard | translate }}
         </a>
         <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;{{ 'charts' | translate }}
@@ -42,7 +48,7 @@
         <a [routerLink]="['/blank-page']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-file-o"></i>&nbsp;{{ 'blankPage' | translate }}
         </a>
-        <a class="list-group-item more-themes" href="http://www.strapui.com/" >
+        <a class="list-group-item more-themes" href="http://www.strapui.com/">
             {{ 'moretheme' | translate }}
         </a>
     </ul>
