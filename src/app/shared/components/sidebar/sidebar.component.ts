@@ -17,13 +17,9 @@ export class SidebarComponent {
     dashboard='dashboard'
   block1: TreenodeComponent;
     ngOnInit() {
-        //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-        //Add 'implements OnInit' to the class.
       this.menudata=  this.http.get('http://localhost:3000/data')
             .map(res => res.json()[0])
-           // .subscribe(r => { this.menudata = r })
     }
-
     eventCalled() {
         this.isActive = !this.isActive;
     }
