@@ -24,6 +24,8 @@ export class SidebarComponent {
         this.isActive = !this.isActive;
     }
     addExpandClass(element: any) {
+        console.log(element)
+        console.log(this.showMenu)
         if (element === this.showMenu) {
             this.showMenu = '0';
         } else {

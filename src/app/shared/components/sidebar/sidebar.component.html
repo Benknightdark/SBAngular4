@@ -5,11 +5,11 @@
 
 
         <div class="nested-menu" *ngFor="let item of menudata | async ">
-            <a class="list-group-item" (click)="addExpandClass('pages')" routerLink="/dashboard" [routerLinkActive]="['router-link-active']">
+            <a class="list-group-item" (click)="addExpandClass(item.Entity.ID)" routerLink="/dashboard" [routerLinkActive]="['router-link-active']">
                     <i class="fa " [class.fa-cogs]="true">  </i>&nbsp;{{item.Entity.Text}}
                     <div *ngIf="item.ChildNodes.length!=0">
 
-                         <li class="nested" [class.expand]="showMenu === 'pages'">
+                         <li class="nested" [class.expand]="showMenu === item.Entity.ID">
                             <ul class="submenu">
                                 <app-treenode [childlist]="item.ChildNodes"></app-treenode>
                             </ul>
