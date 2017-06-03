@@ -1,11 +1,23 @@
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
     <ul class="list-group">
 
-        <div *ngFor="let item of menudata | async ">
-            <a  class="list-group-item">
-                <i class="fa fa-fw fa-dashboard"></i> &nbsp;{{ dashboard | translate }}
-            </a>
+
+        <div class="nested-menu" *ngFor="let item of menudata | async ">
+            <a class="list-group-item" (click)="addExpandClass('pages')" routerLink="/dashboard" [routerLinkActive]="['router-link-active']">
+                    <i class="fa " [class.fa-cogs]="true">  </i>&nbsp;{{item.Entity.Text}}
+                    <div *ngIf="item.ChildNodes.length!=0">
+
+                         <li class="nested" [class.expand]="showMenu === 'pages'">
+                            <ul class="submenu">
+                                <app-treenode [childlist]="item.ChildNodes"></app-treenode>
+                            </ul>
+                </li>
+
+                </div>
+
+                </a>
         </div>
+
         <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-dashboard"></i> &nbsp;{{ dashboard | translate }}
         </a>
