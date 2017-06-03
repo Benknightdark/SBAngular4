@@ -13,7 +13,7 @@ export class SidebarComponent {
     isActive = false;
     showMenu = '';
     menudata:Observable<any>;
-
+    dashboard='dashboard'
   block1: TreenodeComponent;
     ngOnInit() {
         //Called after the constructor, initializing input properties, and the first call to ngOnChanges.

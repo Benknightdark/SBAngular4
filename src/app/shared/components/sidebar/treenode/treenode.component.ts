@@ -9,11 +9,11 @@ import 'rxjs'
 export class TreenodeComponent  {
 
   constructor() { }
-    @Input() childlist:Observable<any>;
+    @Input() childlist:any;
    //childlist:Observable<any>
   ngOnInit() {
 
-
+console.log(this.childlist)
   }
 
 
